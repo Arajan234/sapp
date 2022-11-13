@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="753.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.spp.HomeController">
+    <children>
+        <AnchorPane layoutY="101.0" prefHeight="299.0" prefWidth="753.0" style="-fx-background-color: #fafafa;">
+            <children>
+                <Label layoutX="265.0" layoutY="56.0" prefHeight="46.0" prefWidth="242.0" text="Привет Мир!" textFill="#726d6d">
+                    <font>
+                        <Font name="Cambria" size="38.0" />
+                    </font>
+                </Label>
+            <ImageView fx:id="imageButtonHome" fitHeight="150.0" fitWidth="200.0" layoutX="302.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/7115252_google_logo_new_home_icon.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+        <Label layoutY="8.0" prefHeight="32.0" prefWidth="135.0" text="САПП" textFill="#a8a1a1">
+            <font>
+                <Font name="Cambria Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutY="38.0" prefHeight="51.0" prefWidth="613.0" text="Система Автоматизации Производственных Процессов" textFill="#a8a1a1">
+            <font>
+                <Font name="Cambria Bold" size="20.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
