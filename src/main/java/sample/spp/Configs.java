@@ -5,7 +5,7 @@ public class Configs {
     protected String dbPort = "3306";
     protected String dbUser = "sql8562292";
     protected String dbPass = "G3xEqVadQZ";
-    protected String dbName = "Connection1";
+    protected String dbName = "sql8562292";
 
 
 }

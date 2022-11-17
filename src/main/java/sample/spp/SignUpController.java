@@ -4,10 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class SignUpController {
 
@@ -27,10 +24,10 @@ public class SignUpController {
     private Button signUpButton;
 
     @FXML
-    private CheckBox signUpCheckBoxFemale;
+    private RadioButton signUpCheckBoxFemale;
 
     @FXML
-    private CheckBox signUpCheckBoxMale;
+    private RadioButton signUpCheckBoxMale;
 
     @FXML
     private TextField signUpCountry;
@@ -46,15 +43,27 @@ public class SignUpController {
 
     @FXML
     void initialize() {
-        DatebaseHendler dbHandler = new DatebaseHendler();
-
         signUpButton.setOnAction(event -> {
-            dbHandler.signUpUser(signUpName.getText(), signUpLastName.getText(),
-                    login_field.getText(), password_field.getText(), signUpCountry.getText(),
-                    "Male");
-
+            signUpNewUser();
         });
-
     }
 
+    private void signUpNewUser() {
+        DatebaseHendler dbHandler = new DatebaseHendler();
+
+        String firstName = signUpName.getText();
+        String lastName = signUpLastName.getText();
+        String userName = login_field.getText();
+        String password = password_field.getText();
+        String location = signUpCountry.getText();
+        String gender = "";
+        if (signUpCheckBoxMale.isSelected())
+          gender = "Мужской";
+        else
+          gender = "Женский";
+        User user = new User(firstName, lastName, userName, password, location, gender);
+
+        dbHandler.signUpUser(user);
+
+    }
 }
